@@ -1,5 +1,6 @@
 
 app-header {
+  padding: 5px;
   display: block;
   height: 54px;
   width: 100%;
@@ -14,6 +15,7 @@ app-header:after{
   position: absolute;
   background: inherit;
   z-index: -1;
+  left: 0;
   bottom: 0;
   transform-origin: right bottom;
   transform: skewY(-2deg);

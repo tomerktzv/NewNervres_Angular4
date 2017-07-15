@@ -4,17 +4,36 @@
 }
 
 ul {
+  padding-top: 10px;
   list-style-type: none;
+  min-width: 80%;
+  float: left;
 }
 
-li {
-  margin-left: 5px;
+li > a {
+  color: #F8F8F8;
+  font-family: 'Anton', sans-serif;
+  font-size: 150%;
+}
+
+nav {
+  display: block;
 }
 
 #logo {
-  /*float: left;*/
+  float: left;
   display: block;
-  background: url('../../assets/logo.png') no-repeat;
-  width: 222px;
+  background: url('../../assets/logo2.png') no-repeat;
+  width: 20%;
   height: 55px;
+}
+
+.left {
+  margin-left: 5%;
+  float: left;
+}
+
+.rightSide {
+  margin-right: 5%;
+  float: right;
 }
