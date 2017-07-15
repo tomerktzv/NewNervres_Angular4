@@ -1,0 +1,20 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin-left: 5px;
+}
+
+#logo {
+  /*float: left;*/
+  display: block;
+  background: url('../../assets/logo.png') no-repeat;
+  width: 222px;
+  height: 55px;
+}
