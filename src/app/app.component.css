@@ -5,7 +5,9 @@ app-header {
   height: 54px;
   width: 100%;
   position: relative;
+  z-index: 0;
   background: #171717;
+  margin-bottom: -18px;
 }
 
 app-header:after{
@@ -18,5 +20,5 @@ app-header:after{
   left: 0;
   bottom: 0;
   transform-origin: right bottom;
-  transform: skewY(-2deg);
+  transform: skewY(-1.7deg);
 }
