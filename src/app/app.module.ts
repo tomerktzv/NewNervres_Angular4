@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MixesComponent } from './profile/mixes/mixes.component';
+import { LikesComponent } from './profile/likes/likes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ProfileComponent,
-    MixesComponent
+    MixesComponent,
+    LikesComponent
   ],
   imports: [
     BrowserModule,
