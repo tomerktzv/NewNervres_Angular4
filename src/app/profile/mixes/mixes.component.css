@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.mixName {
+  color: #fdc689;
+  clear: none;
+  float: left;
+
+}
+
+.mixes {
+  float: left;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.social {
+  float: left;
+  margin-left: 7px;
+}

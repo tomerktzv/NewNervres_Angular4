@@ -1,9 +1,10 @@
 * {
-  /*color: #E8E8E8;*/
   color: #D3D3D3;
   padding: 0;
   margin: 0;
-  font-family: 'Anton', sans-serif;
+  /*font-family: 'Anton', sans-serif;*/
+  font-family: 'Reem Kufi', sans-serif;
+  letter-spacing: 1px;
 }
 
 img {
@@ -49,3 +50,18 @@ h2, h3 {
   text-decoration: none;
   color: snow;
 }
+
+
+/*app-likes, app-mixes {*/
+  /*width: 100px;*/
+  /*height: 100px;*/
+  /*display: block;*/
+/*}*/
+
+/*app-likes {*/
+  /*border: 1px solid red;*/
+/*}*/
+
+/*app-mixes {*/
+  /*border: 1px solid green;*/
+/*}*/

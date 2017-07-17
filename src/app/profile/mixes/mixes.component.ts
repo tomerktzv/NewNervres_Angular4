@@ -12,4 +12,8 @@ export class MixesComponent implements OnInit {
   ngOnInit() {
   }
 
+  test() {
+    console.log('test');
+  }
+
 }

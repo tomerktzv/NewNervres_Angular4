@@ -26,10 +26,10 @@ import { LikesComponent } from './profile/likes/likes.component';
     HttpModule,
     RouterModule.forRoot([
 
-      { path: 'profile', component: ProfileComponent,children:[
-        {path:'',redirectTo:'my-mixes',pathMatch:'full'},
-        {path:'my-mixes',component:MixesComponent},
-        {path:'my-likes',component:LikesComponent}
+      { path: 'profile', component: ProfileComponent, children: [
+        {path: '', redirectTo: 'my-mixes', pathMatch: 'full'},
+        {path: 'my-mixes', component: MixesComponent},
+        {path: 'my-likes', component: LikesComponent}
       ]},
       // { path: 'filterByDateAndName', component: SearchComponent},
       // { path: 'filterByName', component: FilterbynameComponent} // NEED TO CHANGE COMPONENT

@@ -21,3 +21,34 @@ app-profile {
 }
 
 
+app-likes, app-mixes {
+  min-width: 700px;
+  /*height: 100px;*/
+  display: block;
+}
+
+app-likes {
+  /*border: 1px solid red;*/
+}
+
+app-mixes {
+  /*border: 1px solid green;*/
+}
+
+/*.mixName {*/
+  /*color: #fdc689;*/
+  /*clear: none;*/
+  /*float: left;*/
+
+/*}*/
+
+/*.mixes {*/
+  /*float: left;*/
+  /*margin-right: 25px;*/
+  /*cursor: pointer;*/
+/*}*/
+
+/*.social {*/
+  /*float: left;*/
+  /*margin-left: 15px;*/
+/*}*/
