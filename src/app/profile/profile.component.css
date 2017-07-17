@@ -32,3 +32,20 @@ h2, h3 {
   clear: both;
   margin-left: 10px;
 }
+
+.bio li{
+  float: left;
+  list-style: none;
+  margin-right: 5%;
+  margin-top:5%;
+}
+.bio li a:visited{
+  color: snow;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.bio li a:hover{
+  text-decoration: none;
+  color: snow;
+}

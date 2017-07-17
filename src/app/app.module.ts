@@ -25,8 +25,12 @@ import { LikesComponent } from './profile/likes/likes.component';
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
-      { path: '', redirectTo: 'profile', pathMatch: 'full'},
-      { path: 'profile', component: ProfileComponent},
+
+      { path: 'profile', component: ProfileComponent,children:[
+        {path:'',redirectTo:'my-mixes',pathMatch:'full'},
+        {path:'my-mixes',component:MixesComponent},
+        {path:'my-likes',component:LikesComponent}
+      ]},
       // { path: 'filterByDateAndName', component: SearchComponent},
       // { path: 'filterByName', component: FilterbynameComponent} // NEED TO CHANGE COMPONENT
     ])
@@ -36,5 +40,3 @@ import { LikesComponent } from './profile/likes/likes.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-
