@@ -1,0 +1,32 @@
+.mixProflie{
+  margin-top: 5%;
+  padding: 5% 15%;
+}
+
+.mixProflie img{
+  width: 30%;
+}
+
+.mixProflie h3{
+  color: #fffefe;
+}
+.mixProflie h5{
+  color: darkgrey;
+}
+
+.mixProflie div,.mixProflie img{
+  float: left;
+  padding-right: 10%;
+}
+
+#userP{
+  margin-top: 45%;
+}
+
+#userP h4{
+   color: #fdc689;
+ }
+
+#userP img{
+  width: 30%;
+}

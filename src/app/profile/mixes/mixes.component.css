@@ -7,7 +7,7 @@
   color: #fdc689;
   clear: none;
   float: left;
-
+  margin-right: 2.5%;
 }
 
 .mixes {
@@ -19,4 +19,7 @@
 .social {
   float: left;
   margin-left: 7px;
+}
+.mixes img{
+  width: 60%;
 }

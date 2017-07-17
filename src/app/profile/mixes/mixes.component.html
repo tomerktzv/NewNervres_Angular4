@@ -3,6 +3,7 @@
   <div>
     <h3 class="mixName">TEMP MIX</h3>
     <div class="social">
+      <li role="presentation" routerLinkActive="active"><a routerLink="/view-your-mixes">View your mix</a></li>
       <img src="../../../assets/heart.png">
       <h4>150</h4>
     </div>
@@ -18,11 +19,14 @@
     <h3 class="mixName">TEMP MIX</h3>
     <div class="social">
       <img src="../../../assets/heart.png">
-      <h4>150</h4>
+      <h5>150</h5>
     </div>
     <div class="social">
       <img src="../../../assets/comment.png">
-      <h4>150</h4>
+      <h5>150</h5>
     </div>
   </div>
+  <tr *ngFor="let com of comments;" >
+    <td>{{com}}</td>
+  </tr>
 </div>
