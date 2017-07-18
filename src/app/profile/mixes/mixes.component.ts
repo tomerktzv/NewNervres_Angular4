@@ -1,4 +1,4 @@
-import { Component, OnInit ,EventEmitter,Output} from '@angular/core';
+import { Component, OnInit, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-mixes',
@@ -7,7 +7,7 @@ import { Component, OnInit ,EventEmitter,Output} from '@angular/core';
 })
 export class MixesComponent implements OnInit {
 
-  comments:[string] = ["Great tracks!","Thanks a lot","not bad at all"];
+  comments: [string] = [ 'Great tracks!', 'Thanks a lot', 'not bad at all' ];
 
   constructor() { }
 

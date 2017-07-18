@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MymixesComponent implements OnInit {
 
+  songs: [string] = ['TEMP SONG', 'TEMP SONG', 'TEMP SONG', 'TEMP SONG', 'TEMP SONG'];
+
   constructor() { }
 
   ngOnInit() {

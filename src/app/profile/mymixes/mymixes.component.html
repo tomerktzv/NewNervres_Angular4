@@ -1,5 +1,5 @@
 <div class="mixProflie">
-  <div>
+  <div id="details">
     <h3>Mix Name</h3>
     <h5>Mix data</h5>
     <div id="userP">
@@ -9,17 +9,44 @@
     </div>
   </div>
   <img src="../../../assets/mix2.png">
-  <div>
+  <div id="cover">
+    <div class="attributes">
+      <img src="../../../assets/heart.png"><p>150</p>
+    </div>
+    <div class="attributes">
+      <img src="../../../assets/comment.png"><p>150</p>
+    </div>
+    <div class="attributes">
+      <img src="../../../assets/played.png"><p>150</p>
+    </div>
+    <div class="attributes">
+      <h3>TAGS</h3>
+      <h4>#static</h4>
+      <h4>#static</h4>
+      <h4>#static</h4>
+    </div>
+  </div>
 
+</div>
+
+<div id="lightboxPlayer">
+  <div id="player">
+    <div>
+      <div id="mixDetails">
+        <img src="../../../assets/smallMix.png">
+        <div>
+          <h3>PLAYING ALBUM NAME</h3>
+          <h4>PLAYING BAND NAME</h4>
+        </div>
+      </div>
+      <div *ngFor="let song of songs" class="songDiv">
+        <h3> {{ song }} </h3>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="lightboxPlayer">
-
-</div>
-
-<div class="mixPlayer">
-  <div>
-
-  </div>
-</div>
+<!--<div class="mixPlayer">-->
+  <!--<div>-->
+  <!--</div>-->
+<!--</div>-->

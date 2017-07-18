@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MixesComponent } from './profile/mixes/mixes.component';
 import { LikesComponent } from './profile/likes/likes.component';
+import { MymixesComponent } from './profile/mymixes/mymixes.component';
 
 @NgModule({
   declarations: [
@@ -18,24 +19,22 @@ import { LikesComponent } from './profile/likes/likes.component';
     HeaderComponent,
     ProfileComponent,
     MixesComponent,
-    LikesComponent
+    LikesComponent,
+    MymixesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
-
       { path: 'profile', component: ProfileComponent, children: [
         {path: '', redirectTo: 'my-mixes', pathMatch: 'full'},
         {path: 'my-mixes', component: MixesComponent},
-        {path: 'my-likes', component: LikesComponent}
+        {path: 'my-likes', component: LikesComponent},
       ]},
-      // { path: 'filterByDateAndName', component: SearchComponent},
-      // { path: 'filterByName', component: FilterbynameComponent} // NEED TO CHANGE COMPONENT
+      {path: 'view-your-mix', component: MymixesComponent}
     ])
   ],
-  // providers: [],
   providers: [sharedApiService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })

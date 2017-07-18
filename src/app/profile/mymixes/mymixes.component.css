@@ -1,32 +1,112 @@
-.mixProflie{
+* {
+  font-family: 'Anton', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.mixProflie {
   margin-top: 5%;
   padding: 5% 15%;
 }
 
-.mixProflie img{
+#userP img {
   width: 30%;
 }
 
-.mixProflie h3{
+.mixProflie h3 {
   color: #fffefe;
 }
-.mixProflie h5{
+.mixProflie h5 {
   color: darkgrey;
 }
 
-.mixProflie div,.mixProflie img{
+#details, .mixProflie img {
   float: left;
   padding-right: 10%;
 }
 
-#userP{
+#userP {
   margin-top: 45%;
 }
 
-#userP h4{
+#userP h4 {
    color: #fdc689;
  }
 
-#userP img{
+#userP img {
   width: 30%;
 }
+
+#cover {
+  float: right;
+  height: 300px;
+  width: 20%;
+}
+
+.attributes {
+  clear: both;
+  padding: 0px;
+  float: none;
+  margin-bottom: 15px;
+  display: block;
+  width: 40%;
+}
+
+.attributes h3 {
+  color: darkgray;
+  margin-bottom: 10px;
+}
+
+.attributes h4 {
+  cursor: pointer;
+  color: #fdc689;
+}
+
+.attributes p {
+  display: inline;
+  color: #fdc689;
+}
+
+#lightboxPlayer {
+  margin: auto;
+  /*width: 75%;*/
+  clear: both;
+  height: 700px;
+  padding-top: 30px;
+  background: url("../../../assets/band2.png") repeat-x;
+}
+
+#player {
+  margin: auto;
+  background: rgba(100, 100, 100, 0.7);
+  width: 50%;
+  padding-top: 20px;
+  height: 550px;
+}
+
+#player > div {
+  /*border: 2px solid blue;*/
+  color: #F8F8F8;
+  background: rgba(20, 20, 20, 0.9);
+  width: 90%;
+  margin: auto;
+  padding: 0;
+  height: 500px;
+  overflow-y: scroll;
+}
+
+#mixDetails, .songDiv {
+  border-bottom: 1px solid darkgray;
+  height: 95px;
+  overflow-y: scroll;
+}
+
+#mixDetails > div {
+  height: 85px;
+  border: 1px solid blue;
+  display: inline-block;
+}
+
+#mixDetails > div h3, h4 {
+}
+

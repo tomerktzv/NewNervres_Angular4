@@ -14,12 +14,15 @@
   float: left;
   margin-right: 25px;
   cursor: pointer;
+  background: #333333;
+  border-radius: 10px;
+}
+
+.mixes:hover {
+  border: 2px solid #D3D3D3;
 }
 
 .social {
   float: left;
   margin-left: 7px;
-}
-.mixes img{
-  width: 60%;
 }
