@@ -1,0 +1,55 @@
+<div class="loginHeader"></div>
+<div class="loginPanel">
+  <button type="button" class="btn btn-primary" (click)="changeStatusLogin($event)">Login</button>
+  <p>OR</p>
+  <button type="button" class="btn btn-success" (click)="changeStatusSingIn($event)">Sign In</button>
+</div>
+<img src="../../assets/logo2.png">
+<div class="lightbox" [ngStyle]="{display: (displayLightBox ? 'block' : 'none')}">
+
+  <div class="loginInput" [ngStyle]="{display: (displayLoginStatus ? 'block' : 'none')}">
+    <h2>Login Into Your Account</h2>
+
+    <form (ngSubmit) = "onSubmited(f)" #f="ngForm">
+      <label>User Name:</label>
+      <input type="text" name="username" ngModel placeholder="Enter Username"><br>
+      <label>Password:</label>
+      <input type="text" name="userpassword" ngModel placeholder="Enter Password"><br>
+      <input type="submit" name="Submit">
+    </form>
+    <h5 [ngStyle]="{visibility: (viewWorning ? 'visible' : 'hidden')}">Wrong Username Or Password</h5>
+    <button class="closeButton" (click)="changeStatusLogin($event)"> CLOSE <span class="glyphicon glyphicon-remove"> </span> </button>
+  </div>
+
+  <div class="SingInInput" [ngStyle]="{display: (displaySignIn ? 'block' : 'none')}">
+    <h2>Sing In Now</h2>
+
+    <form (ngSubmit) = "onSignIn(g)" #g="ngForm">
+      <label>Full Name:</label>
+      <input type="text" name="name" ngModel placeholder="Enter Full Name"><br>
+      <label>User Name:</label>
+      <input type="text" name="username" ngModel placeholder="Enter Username"><br>
+      <label>Password:</label>
+      <input type="text" name="userpassword" ngModel placeholder="Enter Password"><br>
+      <label>Address:</label>
+      <input type="text" name="useraddress" ngModel placeholder="Enter Address"><br>
+      <label>About:</label>
+      <input type="text" name="userabout" ngModel placeholder="Tell Somthing About You"><br>
+      <h4>Select Profile Picture</h4>
+      <input type="radio" name="picP" value="profile1.png"  ngModel id="r1">
+      <label for="r1" class="UserPic"><img src="../../assets/profile1.png"></label>
+      <input type="radio" name="picP" value="profile2.png" ngModel id="r2">
+      <label for="r2" class="UserPic"><img src="../../assets/profile2.png"></label>
+      <input type="radio" name="picP" value="profile3.png" ngModel id="r3">
+      <label for="r3" class="UserPic"><img src="../../assets/profile3.png"></label><br>
+      <div class="clear"></div>
+      <input type="submit" name="Submit">
+    </form>
+
+    <button class="closeButton" (click)="changeStatusSingIn($event)"> CLOSE <span class="glyphicon glyphicon-remove"> </span> </button>
+  </div>
+</div>
+
+
+
+

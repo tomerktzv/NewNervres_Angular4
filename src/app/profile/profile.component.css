@@ -11,6 +11,8 @@ img {
   float: left;
   border: 13px solid #000000;
   margin-right: 5px;
+  width: 210px;
+  height: 213px;
 }
 
 #profileHolder {
@@ -50,7 +52,9 @@ h2, h3 {
   text-decoration: none;
   color: snow;
 }
-
+.clear{
+  clear:both;
+}
 
 /*app-likes, app-mixes {*/
   /*width: 100px;*/

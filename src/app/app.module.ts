@@ -12,6 +12,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { MixesComponent } from './profile/mixes/mixes.component';
 import { LikesComponent } from './profile/likes/likes.component';
 import { MymixesComponent } from './profile/mymixes/mymixes.component';
+import { LoginComponent } from './login/login.component';
+import {UserService} from "./sharedServices/user.service";
 
 @NgModule({
   declarations: [
@@ -20,22 +22,25 @@ import { MymixesComponent } from './profile/mymixes/mymixes.component';
     ProfileComponent,
     MixesComponent,
     LikesComponent,
-    MymixesComponent
+    MymixesComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
+      {path: '', redirectTo: 'login', pathMatch: 'full'},
       { path: 'profile', component: ProfileComponent, children: [
         {path: '', redirectTo: 'my-mixes', pathMatch: 'full'},
         {path: 'my-mixes', component: MixesComponent},
         {path: 'my-likes', component: LikesComponent},
       ]},
+      {path: 'login', component: LoginComponent},
       {path: 'view-your-mix', component: MymixesComponent}
     ])
   ],
-  providers: [sharedApiService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [sharedApiService, {provide: LocationStrategy, useClass: HashLocationStrategy},UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

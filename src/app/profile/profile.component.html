@@ -1,14 +1,15 @@
 
 <div id="profileHolder">
-  <img src="../../assets/profilepic.png">
-  <h2>ILYA MAYDEN</h2>
-  <h3>NEW YORK CITY</h3>
-  <h3 class="bio">DIGITAL CREATIVE DESIGNER LIVING IN NEW YORK.</h3>
-  <h3 class="bio">BORN & RAISED IN MANHATTAN.</h3>
+  <img src="../../assets/{{client.userData.profilepic}}">
+  <h2>{{client.userData.name}}</h2>
+  <h3>{{client.userData.address}}</h3>
+  <h3 class="bio">{{client.userData.about}}.</h3>
+  <h3 class="bio">BORN & RAISED IN {{client.userData.address}}.</h3>
   <ul class="bio">
     <li role="presentation" routerLinkActive="active"><a routerLink="/profile/my-mixes">ILYA'S MIXES</a></li>
     <li role="presentation" routerLinkActive="active"><a routerLink="/profile/my-likes">ILYA'S Likes</a></li>
   </ul>
+  <div class="clear"></div>
   <div class="col-md-12 col-md-10 col-md-8 col-md-offset-1 col-md-offset-2">
     <router-outlet></router-outlet>
   </div>
