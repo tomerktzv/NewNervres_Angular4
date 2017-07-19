@@ -1,13 +1,13 @@
 
 <div id="profileHolder">
   <img src="../../assets/{{client.userData.profilepic}}">
-  <h2>{{client.userData.name}}</h2>
+  <h2>{{client.userData.username}}</h2>
   <h3>{{client.userData.address}}</h3>
   <h3 class="bio">{{client.userData.about}}.</h3>
   <h3 class="bio">BORN & RAISED IN {{client.userData.address}}.</h3>
   <ul class="bio">
-    <li role="presentation" routerLinkActive="active"><a routerLink="/profile/my-mixes">ILYA'S MIXES</a></li>
-    <li role="presentation" routerLinkActive="active"><a routerLink="/profile/my-likes">ILYA'S Likes</a></li>
+    <li role="presentation" routerLinkActive="active"><a routerLink="/profile/my-mixes">{{client.userData.name}} MIXES</a></li>
+    <li role="presentation" routerLinkActive="active"><a routerLink="/profile/my-likes">{{client.userData.name}} Likes</a></li>
   </ul>
   <div class="clear"></div>
   <div class="col-md-12 col-md-10 col-md-8 col-md-offset-1 col-md-offset-2">

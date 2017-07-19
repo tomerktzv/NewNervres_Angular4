@@ -132,3 +132,8 @@ img{
   text-align: center;
   visibility: hidden;
 }
+
+.SingInInput h6{
+  text-align: center;
+  color: red;
+}

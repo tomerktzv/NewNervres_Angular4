@@ -23,7 +23,7 @@
 
   <div class="SingInInput" [ngStyle]="{display: (displaySignIn ? 'block' : 'none')}">
     <h2>Sing In Now</h2>
-
+    <h6 [ngStyle]="{display: (displayWorning ? 'block' : 'none')}">Please Enter valid values and choose a profile picture</h6>
     <form (ngSubmit) = "onSignIn(g)" #g="ngForm">
       <label>Full Name:</label>
       <input type="text" name="name" ngModel placeholder="Enter Full Name"><br>

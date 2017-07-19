@@ -9,6 +9,6 @@ export class UsersModule {
     public profilepic:string,
     public about:string,
     public address:string,
-    public password:string
+    public userpassword:string
   ){}
 }
