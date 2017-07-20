@@ -14,6 +14,8 @@ import { LikesComponent } from './profile/likes/likes.component';
 import { MymixesComponent } from './profile/mymixes/mymixes.component';
 import { LoginComponent } from './login/login.component';
 import {UserService} from "./sharedServices/user.service";
+import {UsersModule} from "./sharedServices/users";
+import {MixService} from "./sharedServices/mix.service";
 
 @NgModule({
   declarations: [
@@ -37,10 +39,10 @@ import {UserService} from "./sharedServices/user.service";
         {path: 'my-likes', component: LikesComponent},
       ]},
       {path: 'login', component: LoginComponent},
-      {path: 'view-your-mix', component: MymixesComponent}
+      {path: 'view-your-mix/:mixname/:username', component: MymixesComponent}
     ])
   ],
-  providers: [sharedApiService, {provide: LocationStrategy, useClass: HashLocationStrategy},UserService],
+  providers: [{provide: LocationStrategy, useClass:HashLocationStrategy},UserService,sharedApiService,MixService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

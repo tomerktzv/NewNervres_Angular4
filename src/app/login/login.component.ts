@@ -28,15 +28,8 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   changeStatusLogin(event){
-    if(!this.displayLoginStatus) {
-      this.displayLightBox = true;
-      this.displayLoginStatus = true;
-    }
-    else{
-      this.displayLightBox = false;
-      this.displayLoginStatus = false;
-      this.viewWorning = false;
-    }
+
+    this.onSubmited(event);
   }
   changeStatusSingIn(event){
     if(!this.displaySignIn) {
@@ -48,6 +41,7 @@ export class LoginComponent implements OnInit {
       this.displaySignIn = false;
       this.displayWorning=false;
     }
+
   }
 
   onSubmited(form:NgForm){
@@ -57,16 +51,10 @@ export class LoginComponent implements OnInit {
           if(isUndefined(_user[0]))
             this.viewWorning= true;
           else {
-            this.user = _user;
-            this.client.userData.username = this.user[0].username;
-            this.client.userData.name = this.user[0].name;
-            this.client.userData.userpassword = this.user[0].userpassword;
-            this.client.userData.about = this.user[0].about;
-            this.client.userData.address = this.user[0].address;
-            this.client.userData.profilepic = this.user[0].profilepic;
+            this.client.setUserData(_user[0]);
             this.router.navigate(['/profile']);
           }
-          console.log(this.user);
+          console.log(_user[0]);
         },
         err=>{
           this.viewWorning= true;
@@ -75,12 +63,6 @@ export class LoginComponent implements OnInit {
       )
   }
   onSignIn(form:NgForm){
-    // this.client.userData.username = form.value.username;
-    // this.client.userData.name = form.value.name;
-    // this.client.userData.userpassword = form.value.userpassword;
-    // this.client.userData.about = form.vaform.value.namelue.userabout;
-    // this.client.userData.address = form.value.useraddress;
-    // this.client.userData.profilepic = form.value.picP;
     if( form.value.username===""      ||
         form.value.name===""          ||
         form.value.userpassword===""  ||

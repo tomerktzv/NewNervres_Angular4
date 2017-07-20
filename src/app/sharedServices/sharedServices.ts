@@ -21,8 +21,8 @@ export class sharedApiService {
   url: string = 'https://new-nerves.herokuapp.com';
 
   //need to change
-  getMix(): Observable<MixesModule[]>{
-    return this.http.get(this.url)
+  getMix(_username): Observable<MixesModule[]>{
+    return this.http.get(`${this.url}/getMixesByUserID/${_username}`)
       .map(this.extractData)
       .catch(this.handleError);
   }

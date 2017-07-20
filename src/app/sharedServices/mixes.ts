@@ -1,12 +1,14 @@
 /**
  * Created by Nir Mekin on 7/18/2017.
  */
+
+
 export class MixesModule {
 
   constructor(
     public songs: [number],
-    public userid:number,
-    public mixid:number,
+    public username:string,
+    public mixcover:string,
     public mixname:string,
     public likes: number,
     public heard: number,

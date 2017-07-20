@@ -6,7 +6,7 @@
 }
 .loginPanel{
   position: relative;
-  top:250px;
+  top:200px;
   left:35%;
   width:30%;
   background: #2d2d2d;
@@ -16,11 +16,19 @@
 .loginPanel:hover + img{
   padding-left:1.5%;
 }
+.input-group{
+  margin-top:5%;
+  margin-bottom: 5%;
+  z-index: 0;
+}
 
+.form-control{
+  top:1px;
+}
 
 img{
   position: relative;
-  top:-60px;
+  top:-260px;
   left:35%;
   transition: padding 0.5s;
 }
@@ -36,8 +44,8 @@ img{
   width: 100%;
   font-size: 120%;
   color: whitesmoke;
-  margin-top:5.5%;
-  margin-bottom: 5.5%;
+  margin-top:2.5%;
+  margin-bottom: 2.5%;
   text-align: center;
 }
 
@@ -47,6 +55,7 @@ img{
   left: 0;
   display: none;
   width: 100%;
+  z-index: 5;
   height: 1200px;
   background: rgba(0,0,0,0.6);
 }
@@ -85,15 +94,15 @@ img{
 
 .closeButton{
   display: block;
-  position: relative;
-  top:-15%;
-  left:75%;
-  border-radius: 7px;
-  width:20%;
+  position: absolute;
+  top:-3%;
+  left:97%;
+  border-radius: 50%;
   background: red;
   color: white;
   font-size: 140%;
-  height: 15%;
+  height: 40px;
+  width: 40px;
 }
 .loginInput .closeButton{
   top:20%;
