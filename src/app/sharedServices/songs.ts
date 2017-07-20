@@ -4,12 +4,12 @@
 export class SongssModule {
 
   constructor(
-    public title: string,
     public artist:string,
-    public id:number,
-    public duration:number,
     public cover: string,
-    public genre: string
+    public duration:number,
+    public genre: string,
+    public id:number,
+    public title: string
   ){}
 
 }

@@ -5,13 +5,11 @@
 }
 
 .mixProflie {
+  height: 550px;
   margin-top: 5%;
   padding: 5% 15%;
 }
 
-#userP img {
-  width: 30%;
-}
 
 .mixProflie h3 {
   color: #fffefe;
@@ -19,14 +17,26 @@
 .mixProflie h5 {
   color: darkgrey;
 }
-
-#details, .mixProflie img {
+#mixDetails img{
+  width:125px;
+}
+#mixCover{
+  display: block;
   float: left;
-  padding-right: 10%;
+  /*margin-top: 2%;*/
+  border: 8px #171717 solid;
+  width:35%;
+  margin-left:-5%;
+  margin-right: 7%;
 }
 
+#details{
+  float: left;
+  padding-right: 8%;
+  width:35%;
+}
 #userP {
-  margin-top: 45%;
+  margin-top: 15%;
 }
 
 #userP h4 {
@@ -34,7 +44,7 @@
  }
 
 #userP img {
-  width: 30%;
+  width: 35%;
 }
 
 #cover {
@@ -78,35 +88,97 @@
 
 #player {
   margin: auto;
-  background: rgba(100, 100, 100, 0.7);
-  width: 50%;
+  position: relative;
+  background: rgba(20, 20, 20, 0.6);
+  width: 60%;
   padding-top: 20px;
-  height: 550px;
+  padding-bottom: 20px;
+  min-height: 50px;
+  z-index: 0;
 }
 
 #player > div {
   /*border: 2px solid blue;*/
   color: #F8F8F8;
   background: rgba(20, 20, 20, 0.9);
-  width: 90%;
+  width: 75%;
   margin: auto;
-  padding: 0;
-  height: 500px;
-  overflow-y: scroll;
+  /*min-height: 500px;*/
+}
+
+#player:after{
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(20, 20, 20, 0.5);
+  z-index: -1;
+  left: 0;
+  bottom: 0;
+  transform-origin: right;
+  transform: skewY(-3deg);
 }
 
 #mixDetails, .songDiv {
   border-bottom: 1px solid darkgray;
   height: 95px;
-  overflow-y: scroll;
 }
-
+.songDiv span{
+  color: #957350;
+}
 #mixDetails > div {
   height: 85px;
-  border: 1px solid blue;
   display: inline-block;
 }
 
 #mixDetails > div h3, h4 {
 }
 
+
+.musicPlayer {
+  position: relative;
+  top: -100px;
+  padding: 5px;
+  display: block;
+  height: 35px;
+  width: 100%;
+  /*position: relative;*/
+  z-index: 0;
+  background: #171717;
+  margin-bottom: -18px;
+}
+
+
+
+.musicPlayer:after{
+  content: '';
+  width: 100%;
+  height: 125%;
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  left: 0;
+  bottom: 0;
+  transform-origin: right top;
+  transform: skewY(-1.7deg);
+}
+
+.pushAndPlay{
+  display: block;
+  position: absolute;
+  top:32%;
+  left:5%;
+  border: none;
+  background-color: #C0C0C0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+}
+.pushAndPlay img{
+  width:80%;
+}
+
+.mixDTitle h5{
+  color: #957350;
+}

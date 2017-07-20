@@ -1,51 +1,54 @@
+<div *ngIf="mix && user">
 <div class="mixProflie">
   <div id="details">
-    <h3>Mix Name</h3>
+    <h3>{{mix[0].mixname}}</h3>
     <h5>Mix data</h5>
     <div id="userP">
-      <h4>User Name</h4>
-      <h5>User Address</h5>
-      <img src="../../../assets/profilepic.png">
+      <h4>{{user[0].name}}</h4>
+      <h5>{{user[0].address}}</h5>
+      <img src="../../../assets/{{user[0].profilepic}}">
     </div>
   </div>
-  <img src="../../../assets/mix2.png">
+  <img id="mixCover" src="../../../assets/{{mix[0].mixcover}}">
   <div id="cover">
     <div class="attributes">
-      <img src="../../../assets/heart.png"><p>150</p>
+      <img src="../../../assets/heart.png"><p>{{mix[0].likes}}</p>
     </div>
     <div class="attributes">
-      <img src="../../../assets/comment.png"><p>150</p>
+      <img src="../../../assets/comment.png"><p>{{mix[0].comments.length}}</p>
     </div>
     <div class="attributes">
-      <img src="../../../assets/played.png"><p>150</p>
+      <img src="../../../assets/played.png"><p>{{mix[0].heard}}</p>
     </div>
-    <div class="attributes">
+    <div class="attributes" >
       <h3>TAGS</h3>
-      <h4>#static</h4>
-      <h4>#static</h4>
-      <h4>#static</h4>
+      <div *ngFor="let tag of mix[0].hashtags">
+        <h4>#{{tag}}</h4>
+      </div>
     </div>
   </div>
 
 </div>
-
+<div class="musicPlayer">
+  <button class="pushAndPlay"><img src="../../../assets/pauseButton.png"></button>
+</div>
 <div id="lightboxPlayer">
   <div id="player">
     <div>
       <div id="mixDetails">
-        <img src="../../../assets/smallMix.png">
-        <div>
-          <h3>PLAYING ALBUM NAME</h3>
-          <h4>PLAYING BAND NAME</h4>
+        <img src="../../../assets/{{mix[0].mixcover}}">
+        <div class="mixDTitle">
+          <h4>PLAYING ALBUM {{mix[0].mixname}}</h4>
+          <h5>{{mix[0].mixname}} by {{user[0].name}}</h5>
         </div>
       </div>
-      <div *ngFor="let song of songs" class="songDiv">
-        <h3> {{ song }} </h3>
+      <div *ngFor="let song of songsList; let i = index" class="songDiv">
+        <h3>&nbsp;<span>{{i+1}} &nbsp;</span> {{ song.title }}</h3>
       </div>
     </div>
   </div>
 </div>
-
+</div>
 <!--<div class="mixPlayer">-->
   <!--<div>-->
   <!--</div>-->

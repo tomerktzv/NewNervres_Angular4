@@ -7,7 +7,7 @@ import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import {MixesModule} from './mixes';
-import {UsersModule} from './users';
+import {UsersModule, UsersModule2} from './users';
 import {SongssModule} from './songs';
 
 import { Observable } from 'rxjs/Observable';
@@ -26,6 +26,19 @@ export class sharedApiService {
       .map(this.extractData)
       .catch(this.handleError);
   }
+
+  getSpecificMix(_username,_mixName): Observable<MixesModule>{
+    return this.http.get(`${this.url}/getMixesByUsernameAndMixname/${_username}/${_mixName}`)
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+
+  getUserDetails(_username): Observable<UsersModule2>{
+    return this.http.get(`${this.url}/getUsersDetails/${_username}`)
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+
   getUser(_username,_password): Observable<UsersModule>{
     return this.http.get(`${this.url}/getUserByIDAndPass/${_username}/${_password}`)
       .map(this.extractData)
@@ -45,10 +58,15 @@ export class sharedApiService {
       .catch(this.handleError);
   }
 
+  getSongById(_id): Observable<SongssModule>{
+    return this.http.get(`${this.url}/getSongByID/${_id}`)
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+
   //abstract function - no need to change
   private extractData(res: Response) {
     let body = res.json();
-    console.log("Test body: "+body);
     return body || { };
   }
 

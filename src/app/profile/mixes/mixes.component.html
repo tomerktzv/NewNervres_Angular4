@@ -1,5 +1,7 @@
+
+
 <div *ngFor="let mix of mixes">
-  <div class="mixes" role="presentation" routerLinkActive="active" routerLink="/view-your-mix/{{mix.mixname}}/{{mix.username}}">
+  <div class="mixes" role="presentation" routerLinkActive="active" routerLink="/view-your-mix/{{mix.username}}/{{mix.mixname}}">
     <img class="mixCover" src="../../../assets/{{mix.mixcover}}">
     <div>
       <h3 class="mixName">{{mix.mixname}}</h3>

@@ -39,7 +39,7 @@ import {MixService} from "./sharedServices/mix.service";
         {path: 'my-likes', component: LikesComponent},
       ]},
       {path: 'login', component: LoginComponent},
-      {path: 'view-your-mix/:mixname/:username', component: MymixesComponent}
+      {path: 'view-your-mix/:username/:mixname', component: MymixesComponent}
     ])
   ],
   providers: [{provide: LocationStrategy, useClass:HashLocationStrategy},UserService,sharedApiService,MixService],

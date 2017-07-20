@@ -7,7 +7,7 @@ app-header {
   height: 54px;
   width: 100%;
   /*position: relative;*/
-  z-index: 0;
+  z-index: 2;
   background: #171717;
   margin-bottom: -18px;
 }

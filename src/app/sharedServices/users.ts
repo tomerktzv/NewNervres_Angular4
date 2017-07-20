@@ -9,6 +9,16 @@ export class UsersModule {
     public profilepic:string,
     public about:string,
     public address:string,
-    public userpassword:string
+    public userpassword:string = " "
+  ){}
+}
+export class UsersModule2 {
+
+  constructor(
+    public name: string,
+    public username:string,
+    public profilepic:string,
+    public about:string,
+    public address:string
   ){}
 }
