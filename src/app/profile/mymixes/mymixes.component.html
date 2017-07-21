@@ -1,55 +1,61 @@
-<div *ngIf="mix && user">
-<div class="mixProflie">
-  <div id="details">
-    <h3>{{mix[0].mixname}}</h3>
-    <h5>Mix data</h5>
-    <div id="userP">
-      <h4>{{user[0].name}}</h4>
-      <h5>{{user[0].address}}</h5>
-      <img src="../../../assets/{{user[0].profilepic}}">
-    </div>
-  </div>
-  <img id="mixCover" src="../../../assets/{{mix[0].mixcover}}">
-  <div id="cover">
-    <div class="attributes">
-      <img src="../../../assets/heart.png"><p>{{mix[0].likes}}</p>
-    </div>
-    <div class="attributes">
-      <img src="../../../assets/comment.png"><p>{{mix[0].comments.length}}</p>
-    </div>
-    <div class="attributes">
-      <img src="../../../assets/played.png"><p>{{mix[0].heard}}</p>
-    </div>
-    <div class="attributes" >
-      <h3>TAGS</h3>
-      <div *ngFor="let tag of mix[0].hashtags">
-        <h4>#{{tag}}</h4>
-      </div>
-    </div>
-  </div>
+ <div class="container">
+    <div *ngIf="mix && user">
+      <div class="mixProflie">
+        <div id="details">
+          <h3>{{mix[0].mixname}}</h3>
+          <h5>{{user[0].about}}</h5>
+          <div id="userP">
+            <h4>{{user[0].name}}</h4>
+            <h5>{{user[0].address}}</h5>
+            <img src="../../../assets/{{user[0].profilepic}}">
+          </div>
+        </div>
+        <img id="mixCover" src="../../../assets/{{mix[0].mixcover}}">
+        <div id="cover">
+          <div class="attributes">
+            <img src="../../../assets/heart.png"><p>{{mix[0].likes}}</p>
+          </div>
+          <div class="attributes">
+            <img src="../../../assets/comment.png"><p>{{mix[0].comments.length}}</p>
+          </div>
+          <div class="attributes">
+            <img src="../../../assets/played.png"><p>{{mix[0].heard}}</p>
+          </div>
+          <div class="attributes" >
+            <h3>TAGS</h3>
+            <div *ngFor="let tag of mix[0].hashtags">
+              <h4>#{{tag}}</h4>
+            </div>
+          </div>
+        </div>
 
-</div>
-<div class="musicPlayer">
-  <button class="pushAndPlay"><img src="../../../assets/pauseButton.png"></button>
-</div>
-<div id="lightboxPlayer">
-  <div id="player">
-    <div>
-      <div id="mixDetails">
-        <img src="../../../assets/{{mix[0].mixcover}}">
-        <div class="mixDTitle">
-          <h4>PLAYING ALBUM {{mix[0].mixname}}</h4>
-          <h5>{{mix[0].mixname}} by {{user[0].name}}</h5>
+      </div>
+      <div class="musicPlayer">
+        <button class="pushAndPlay" (click)="checkStatusPlayer($event)" ><img src="../../../assets/{{buttonPlayer}}"></button>
+        <h3>{{songPlay[0]}}</h3>
+        <h4>{{songPlay[1]}}</h4>
+        <h5>{{songPlay[2]}}</h5>
+      </div>
+      <div id="lightboxPlayer">
+        <div id="player">
+          <div>
+            <div id="mixDetails">
+              <img [attr.src]="songPlay[3]">
+              <div class="mixDTitle">
+                <h4>PLAYING ALBUM {{mix[0].mixname}}</h4>
+                <h5>{{songPlay[0]}} by {{songPlay[2]}}</h5>
+              </div>
+            </div>
+            <div *ngFor="let song of songsList; let i = index" class="songDiv">
+              <section (click)="musicPlay($evnet,i)">&nbsp;&nbsp;<span class="indexSong">{{i+1}}&nbsp;&nbsp;&nbsp;</span> <div class="songDetaile"><p>{{ song.title }}</p><p>{{song.artist}}</p></div><span class="durationMix">{{getDurtaion(song.duration)}}</span></section>
+              <div class="clear"></div>
+            </div>
+
+          </div>
+          <audio controls #player [ngStyle]="{'display': 'none'}" [attr.src]="src">
+            <source src="https://veined-error.000webhostapp.com/songs/100.Gotta%20Get%20Away.mp3" type="audio/mpeg">
+          </audio>
         </div>
       </div>
-      <div *ngFor="let song of songsList; let i = index" class="songDiv">
-        <h3>&nbsp;<span>{{i+1}} &nbsp;</span> {{ song.title }}</h3>
-      </div>
     </div>
-  </div>
-</div>
-</div>
-<!--<div class="mixPlayer">-->
-  <!--<div>-->
-  <!--</div>-->
-<!--</div>-->
+ </div>

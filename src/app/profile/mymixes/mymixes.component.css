@@ -4,10 +4,13 @@
   margin: 0;
 }
 
+.container{
+  margin:0 auto;
+}
 .mixProflie {
   height: 550px;
-  margin-top: 5%;
-  padding: 5% 15%;
+  margin-top: 15%;
+  width: 100%;
 }
 
 
@@ -18,22 +21,22 @@
   color: darkgrey;
 }
 #mixDetails img{
-  width:125px;
+  width:117px;
 }
 #mixCover{
   display: block;
   float: left;
   /*margin-top: 2%;*/
   border: 8px #171717 solid;
-  width:35%;
+  width:45%;
   margin-left:-5%;
   margin-right: 7%;
 }
 
 #details{
   float: left;
-  padding-right: 8%;
-  width:35%;
+  padding-right: 2%;
+  width:30%;
 }
 #userP {
   margin-top: 15%;
@@ -48,9 +51,9 @@
 }
 
 #cover {
-  float: right;
+  float: left;
   height: 300px;
-  width: 20%;
+  margin-left: 5%;
 }
 
 .attributes {
@@ -59,7 +62,7 @@
   float: none;
   margin-bottom: 15px;
   display: block;
-  width: 40%;
+  width: 100%;
 }
 
 .attributes h3 {
@@ -78,11 +81,11 @@
 }
 
 #lightboxPlayer {
-  margin: auto;
+  margin:auto;
   /*width: 75%;*/
   clear: both;
   height: 700px;
-  padding-top: 30px;
+  padding-top: 130px;
   background: url("../../../assets/band2.png") repeat-x;
 }
 
@@ -119,9 +122,23 @@
   transform: skewY(-3deg);
 }
 
-#mixDetails, .songDiv {
+#mixDetails {
   border-bottom: 1px solid darkgray;
-  height: 95px;
+  height: 119px;
+}
+
+.songDiv:hover{
+  background: rgba(56,54,54,0.8);
+}
+.songDiv{
+  cursor: pointer;
+  border-bottom: 1px solid darkgray;
+  height: 70px;
+
+  transition: background 0.5s;
+}
+.songDiv:last-child{
+  border:none;
 }
 .songDiv span{
   color: #957350;
@@ -133,16 +150,19 @@
 
 #mixDetails > div h3, h4 {
 }
-
+.durationMix{
+  float: right;
+  margin-right: 2.5%;
+  line-height: 70px;
+}
 
 .musicPlayer {
   position: relative;
-  top: -100px;
+  top: -50px;
   padding: 5px;
   display: block;
   height: 35px;
   width: 100%;
-  /*position: relative;*/
   z-index: 0;
   background: #171717;
   margin-bottom: -18px;
@@ -181,4 +201,41 @@
 
 .mixDTitle h5{
   color: #957350;
+}
+.indexSong{
+  float: left;
+  line-height: 70px;
+  margin-left: 2.5%;
+
+}
+.songDetaile{
+  float: left;
+  line-height: 35px;
+  margin-left: 2.5%;
+}
+.songDetaile p:last-child{
+  font-size: 90%;
+  color: #957350;
+}
+.clear{
+  dlear:both;
+}
+.musicPlayer h3{
+  position: absolute;
+  left:15%;
+  top:45%;
+  color: #957350;
+  transform: skewY(2.1deg);
+}
+
+.musicPlayer h4,.musicPlayer h5{
+  position: absolute;
+  color: white;
+  left:45%;
+}
+.musicPlayer h4{
+  top:20%;
+}
+.musicPlayer h5{
+  top:85%;
 }

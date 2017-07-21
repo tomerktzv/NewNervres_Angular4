@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ElementRef, ViewChild} from '@angular/core';
 import {Router, ActivatedRoute, Params} from "@angular/router";
 import {sharedApiService} from "../../sharedServices/sharedServices";
 import {MixesModule} from "../../sharedServices/mixes";
@@ -13,13 +13,17 @@ import {SongssModule} from "../../sharedServices/songs";
 })
 export class MymixesComponent implements OnInit {
 
-  songs: [string] = ['TEMP SONG', 'TEMP SONG', 'TEMP SONG', 'TEMP SONG', 'TEMP SONG'];
+  @ViewChild('player') musicPlayer;
   mix:MixesModule;
   user:UsersModule2;
   mixSongs:number[]=[];
-  songsList:SongssModule[] = [];
+  songsList:SongssModule[] =[];
+  musicSrc:string = "https://veined-error.000webhostapp.com/";
+  buttonPlayer:string = "playButton.png";
+  src:string;
+  songPlay:string[] = [];
 
-  constructor(private activatedRouter:ActivatedRoute, private service:sharedApiService) { }
+  constructor(private activatedRouter:ActivatedRoute, private service:sharedApiService, public element:ElementRef) { }
 
   ngOnInit() {
     this.activatedRouter.params.subscribe((params: Params)=>{
@@ -38,22 +42,15 @@ export class MymixesComponent implements OnInit {
             if(_mix === {}) console.log("not valid");
             else {
               this.mix = _mix;
-              // console.log(_mix[0]);
               this.mixSongs = _mix[0].songs;
               let serv = this.service;
               let songTemp = this.songsList;
 
-              // this.songsList.push(new SongssModule("","",2,"",2,""));
-              // console.log(this.songsList);
               this.mixSongs.forEach(function (sg) {
                 serv.getSongById(sg)
                   .subscribe(
                     _song =>{
-                      console.log(_song[0]);
-                      // songTemp.push(new SongssModule("","",2,"",2,""));
                       songTemp.push(new SongssModule(_song[0].artist,_song[0].cover,_song[0].duration,_song[0].genre,_song[0].id,_song[0].title));
-                      console.log("--------");
-                      console.log(songTemp);
                     },
                     err=>{console.log(err)}
                   )
@@ -62,8 +59,58 @@ export class MymixesComponent implements OnInit {
           },
           err=>{console.log(err)}
         )
-
     })
+
+    setTimeout(()=>{
+      this.songPlay[3]=this.musicSrc+"pictures/"+this.songsList[0].id+"."+this.songsList[0].title+".jpg";
+      this.musicPlay('click',0);
+    },2000)
+
   }
 
+  getDurtaion(_duration){
+    let duration = _duration/60;
+    let min = Math.floor(duration);
+    let sec = ((100*duration)%100)*0.6;
+    sec = Math.floor(sec);
+
+    let mixDuration:string;
+
+    if(min==10) mixDuration = `10:`;
+    else mixDuration = `0${min}:`;
+
+    if(sec>=10) mixDuration+=`${sec}`;
+    else mixDuration+=`0${sec}`;
+    return mixDuration
+  }
+
+
+  musicPlay(event,_index) {
+    this.songPlay[0] = this.songsList[_index].title;
+    this.songPlay[1] = this.songsList[_index].genre;
+    this.songPlay[2] = this.songsList[_index].artist;
+    this.songPlay[3]= this.musicSrc+"pictures/"+this.songsList[_index].id+"."+this.songsList[_index].title+".jpg"
+    this.src = this.musicSrc+"songs/"+this.songsList[_index].id+"."+this.songsList[_index].title+".mp3";
+    setTimeout(()=>{
+      let playPromise = this.musicPlayer.nativeElement.play();
+      this.buttonPlayer="pauseButton.png";
+
+      if (playPromise !== undefined) {
+        playPromise.then(_ => {
+        }).catch(error => {});
+      }
+    },500)
+
+  }
+
+  checkStatusPlayer(event){
+    if(this.buttonPlayer==="pauseButton.png"){
+      this.buttonPlayer="playButton.png";
+      this.musicPlayer.nativeElement.pause();
+    }
+    else{
+      this.buttonPlayer="pauseButton.png";
+      this.musicPlayer.nativeElement.play();
+    }
+  }
 }
