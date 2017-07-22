@@ -6,13 +6,13 @@
 }
 
 .row{
-  width: 50%;
+  width: 55%;
   margin: 7% auto;
   border-radius: 7px;
 }
 .row>div>div{
   width:30%;
-  background: rgba(0,0,0,0.7);
+  /*background: rgba(0,0,0,0.7);*/
   color: #957350;
   transition: background-color 1s;
 }
@@ -21,6 +21,7 @@
   text-align: center;
   font-family: "Comic Sans MS";
   font-weight: bold;
+  font-size: 150%;
 }
 
 .row>div>div a:hover{
@@ -31,7 +32,7 @@
 
 @keyframes coverflip {
   from{
-    transform: skewY(-2.1deg);
+    transform: skewY(2.1deg);
     box-shadow: 0 -10px 20px grey;
     border-radius: 7%;
   }

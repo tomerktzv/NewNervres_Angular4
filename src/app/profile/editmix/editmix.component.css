@@ -59,3 +59,33 @@ h1{
 .clear{
   clear: both;
 }
+.hastgMix{
+  position: fixed;
+  top: 15%;
+  left:5%;
+  width: 15%;
+  background: #0084a8;
+
+  z-index: 20;
+}
+.hastgMix:after{
+  content: '';
+  width: 16%;
+  height: 4.5%;
+  position: fixed;
+  background-color: rgba(232,171,44,0.6);
+  transform: skewY(-5deg);
+  transform-origin: right bottom;
+  z-index: -1;
+  top: 13.5%;
+  left:3%;
+}
+.hastgMix h4{
+  text-align: center;
+}
+.commentHastg{
+  text-align: center;
+  margin: 2.5% 0;
+  font-weight: bold;
+  font-family: "Comic Sans MS";
+}

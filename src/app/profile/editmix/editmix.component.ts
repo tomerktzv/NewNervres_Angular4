@@ -13,7 +13,6 @@ import {ActivatedRoute, Params} from "@angular/router";
 export class EditmixComponent implements OnInit {
 
   mix:MixesModule;
-  songWait:boolean = false;
   song:SongssModule[] = [];
   mixName:String;
   musicSrc:string = "https://veined-error.000webhostapp.com/pictures/";
@@ -29,6 +28,7 @@ export class EditmixComponent implements OnInit {
       this.service.getSpecificMix(localStorage.getItem('username'),mixName)
         .subscribe(
           _mix=>{
+            this.mix = _mix[0];
             let tempsongs = this.song;
             _mix[0].songs.forEach(function (temp) {
               srv.getSongById(temp)
@@ -39,7 +39,6 @@ export class EditmixComponent implements OnInit {
                   }
                 )
             })
-            this.songWait = true;
           }
         )
 

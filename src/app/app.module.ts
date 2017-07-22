@@ -17,6 +17,7 @@ import {UserService} from "./sharedServices/user.service";
 import {UsersModule} from "./sharedServices/users";
 import {MixService} from "./sharedServices/mix.service";
 import { ViewmixesComponent } from './profile/viewmixes/viewmixes.component';
+import { EditmixComponent } from './profile/editmix/editmix.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ViewmixesComponent } from './profile/viewmixes/viewmixes.component';
     LikesComponent,
     MymixesComponent,
     LoginComponent,
-    ViewmixesComponent
+    ViewmixesComponent,
+    EditmixComponent
   ],
   imports: [
     BrowserModule,
@@ -40,9 +42,10 @@ import { ViewmixesComponent } from './profile/viewmixes/viewmixes.component';
         {path: 'my-mixes', component: MixesComponent},
         {path: 'my-likes', component: LikesComponent}
       ]},
+      {path: 'edit/:mixname', component: EditmixComponent},
       {path: 'login', component: LoginComponent},
       {path: 'view-your-mix/:username/:mixname', component: MymixesComponent},
-      {path: 'mixers', component: ViewmixesComponent}
+      {path: 'mixers', component: ViewmixesComponent},
     ])
   ],
   providers: [{provide: LocationStrategy, useClass:HashLocationStrategy},UserService,sharedApiService,MixService],

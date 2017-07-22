@@ -29,6 +29,8 @@ export class MymixesComponent implements OnInit {
     this.activatedRouter.params.subscribe((params: Params) => {
       let username = params['username'],
           mixname = params['mixname'];
+      this.service.setAddHeard(username,mixname)
+        .subscribe();
       this.service.getUserDetails(username)
         .subscribe(
           _user => {

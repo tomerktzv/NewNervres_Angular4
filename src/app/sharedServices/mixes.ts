@@ -24,3 +24,10 @@ export class MixesModuleNew{
     public mixname:string
   ){}
 }
+
+export class MixesAddHeard{
+  constructor(
+    public username:string,
+    public mixname:string
+  ){}
+}

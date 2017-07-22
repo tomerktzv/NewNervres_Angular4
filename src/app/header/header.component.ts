@@ -9,7 +9,7 @@ import {isUndefined} from "util";
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private client:UserService) { }
+  constructor(public client:UserService) { }
 
   ngOnInit() {
     if(isUndefined(localStorage.getItem("username")))
