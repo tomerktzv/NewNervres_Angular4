@@ -1,0 +1,61 @@
+.myContainer{
+  margin:8% auto;
+  width:60%;
+}
+
+h1{
+  color: snow;
+  font-family: "Comic Sans MS";
+  transform: skewY(-5deg);
+}
+
+.editMix{
+  padding:2.5% ;
+  width: 80%;
+  border-radius: 3px;
+  border:1px dotted snow;
+  margin: 2.5% auto;
+}
+
+.mySongs{
+  width:80%;
+  margin:10px auto;
+  background: rgba(25,25,25,0.5);
+  /*height: 100px;*/
+  padding-bottom: 1.5%;
+
+}
+
+.songlist{
+  margin: 5% 0%;
+  padding: 1.5% 0%;
+}
+
+.songlist img, .songlist article{
+  float: left;
+  margin-left: 2.5%;
+  margin-right: 3%;
+}
+.songlist img{
+  width:100px;
+}
+.songlist article{
+  line-height: 300%;
+  font-size: 150%;
+  font-family: "Copperplate Gothic Bold";
+  color: snow;
+}
+
+.songlist button{
+  float: right;
+  margin-right: 2.5%;
+  width:50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: gray;
+  color: snow;
+}
+
+.clear{
+  clear: both;
+}
