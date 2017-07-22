@@ -112,8 +112,14 @@
   width: 60%;
   padding-top: 20px;
   padding-bottom: 20px;
+  overflow-y: scroll;
   min-height: 50px;
+  max-height: 450px;
   z-index: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 #player > div {
@@ -254,4 +260,35 @@
 }
 .musicPlayer h5{
   top:85%;
+}
+
+#father {
+  overflow: hidden;
+  padding-top: 17px;
+  margin: auto;
+  background: rgba(20, 20, 20, 0.6);
+  width: 60%;
+  height: 70px;
+}
+
+.mixComments {
+  color: #fdc689;
+  font-size: 170%;
+  min-width: 10%;
+  float: left;
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  animation: roll 15s linear infinite;
+  margin-right: 2.5%;
+}
+
+@keyframes roll {
+  from {
+    left:-80%;
+  }
+  to {
+    left:80%;
+  }
 }

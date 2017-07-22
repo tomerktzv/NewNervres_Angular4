@@ -1,22 +1,23 @@
 
 
-<div *ngFor="let mix of mixes">
+<div *ngFor="let mix of mixes" id="wrapper">
   <div class="mixes" role="presentation" routerLinkActive="active" routerLink="/view-your-mix/{{mix.username}}/{{mix.mixname}}">
     <img class="mixCover" src="../../../assets/{{mix.mixcover}}">
     <div>
       <h3 class="mixName">{{mix.mixname}}</h3>
       <div class="social">
         <img src="../../../assets/heart.png">
-        <h4>{{mix.likes}}</h4>
-      </div>
-      <div class="social">
         <img src="../../../assets/comment.png">
-        <h4>{{mix.heard}}</h4>
+        <h4>&nbsp; {{mix.likes}}</h4>
+        <h4>&nbsp;{{mix.heard}}</h4>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div id="father">
+      <div *ngFor="let comment of mix.comments" class="mixComments">
+        <article>"{{comment}}"&nbsp;</article>
       </div>
     </div>
-  </div>
-  <div *ngFor="let comment of mix.comments">
-    <article>{{comment}}</article>
   </div>
 
 </div>

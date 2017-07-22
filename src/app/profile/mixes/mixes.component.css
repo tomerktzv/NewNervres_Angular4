@@ -3,19 +3,24 @@
   padding: 0;
 }
 
+#wrapper {
+  width: 105%;
+}
+
 .mixName {
   color: #fdc689;
-  clear: none;
-  float: left;
-  margin-right: 2.5%;
+  text-align: center;
 }
 
 .mixes {
+  overflow: hidden;
   float: left;
-  margin-right: 25px;
+  margin: auto 25px 15px auto;
+  height: 230px;
   cursor: pointer;
+  width: 28%;
   background: #333333;
-  border-radius: 10px;
+  border-radius: 3px;
 }
 
 .mixes:hover {
@@ -23,9 +28,62 @@
 }
 
 .social {
-  float: left;
-  margin-left: 7px;
+  margin: 0 auto 50px auto;
+  text-align: center;
+  width: 35%;
 }
+
+.social img {
+  margin-left: 10%;
+  float: left;
+}
+
+.social h4 {
+  float: left;
+  margin-left: 6%;
+}
+
+.social h4:nth-child(4) {
+  margin-left: 15%;
+}
+
 .mixCover{
-  width:150px;
+  width: 140px;
+  border-radius: 5px;
+  display: block;
+  margin: 25px auto auto auto;
+}
+
+.mixComments {
+  margin-right: 2.5%;
+  float: left;
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  animation: roll 15s linear infinite;
+}
+
+.mixComments article {
+  float: left;
+  color: #fdc689;
+}
+
+.clear {
+  clear: both;
+}
+
+@keyframes roll {
+  from {
+    left:-50%;
+  }
+  to {
+    left:50%;
+  }
+}
+
+#father {
+  overflow: hidden;
+  display: block;
+  width: 200%;
 }

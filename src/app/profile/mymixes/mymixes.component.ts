@@ -3,7 +3,7 @@ import {Router, ActivatedRoute, Params} from "@angular/router";
 import {sharedApiService} from "../../sharedServices/sharedServices";
 import {MixesModule} from "../../sharedServices/mixes";
 import {UsersModule, UsersModule2} from "../../sharedServices/users";
-import {SongssModule} from "../../sharedServices/songs";
+import {SongssModule} from '../../sharedServices/songs';
 
 
 @Component({
@@ -14,32 +14,33 @@ import {SongssModule} from "../../sharedServices/songs";
 export class MymixesComponent implements OnInit {
 
   @ViewChild('player') musicPlayer;
-  mix:MixesModule;
-  user:UsersModule2;
-  mixSongs:number[]=[];
-  songsList:SongssModule[] =[];
-  musicSrc:string = "https://veined-error.000webhostapp.com/";
-  buttonPlayer:string = "playButton.png";
-  src:string;
-  songPlay:string[] = [];
+  mix: MixesModule;
+  user: UsersModule2;
+  mixSongs: number[] = [];
+  songsList: SongssModule[] = [];
+  musicSrc = 'https://veined-error.000webhostapp.com/';
+  buttonPlayer = 'playButton.png';
+  src: string;
+  songPlay: string[] = [];
 
-  constructor(private activatedRouter:ActivatedRoute, private service:sharedApiService, public element:ElementRef) { }
+  constructor(private activatedRouter: ActivatedRoute, private service: sharedApiService, public element: ElementRef) { }
 
   ngOnInit() {
-    this.activatedRouter.params.subscribe((params: Params)=>{
+    this.activatedRouter.params.subscribe((params: Params) => {
       let username = params['username'],
           mixname = params['mixname'];
       this.service.getUserDetails(username)
         .subscribe(
-          _user=>{
+          _user => {
             this.user = _user;
           },
-          err=>{console.log(err)}
-        );
-      this.service.getSpecificMix(username,mixname)
+          err => {
+            console.log(err);
+          });
+      this.service.getSpecificMix(username, mixname)
         .subscribe(
-          _mix=>{
-            if(_mix === {}) console.log("not valid");
+          _mix => {
+            if (_mix === {}) console.log('not valid');
             else {
               this.mix = _mix;
               this.mixSongs = _mix[0].songs;
@@ -49,22 +50,24 @@ export class MymixesComponent implements OnInit {
               this.mixSongs.forEach(function (sg) {
                 serv.getSongById(sg)
                   .subscribe(
-                    _song =>{
-                      songTemp.push(new SongssModule(_song[0].artist,_song[0].cover,_song[0].duration,_song[0].genre,_song[0].id,_song[0].title));
+                    _song => {
+                      songTemp.push(new SongssModule(_song[0].artist, _song[0].cover, _song[0].duration, _song[0].genre, _song[0].id, _song[0].title));
                     },
-                    err=>{console.log(err)}
-                  )
+                    err => {
+                      console.log(err);
+                    });
               });
             }
           },
-          err=>{console.log(err)}
-        )
-    })
+          err => {
+            console.log(err);
+          });
+    });
 
-    setTimeout(()=>{
-      this.songPlay[3]=this.musicSrc+"pictures/"+this.songsList[0].id+"."+this.songsList[0].title+".jpg";
-      this.musicPlay('click',0);
-    },2000)
+    // setTimeout(()=>{
+    //   this.songPlay[3]=this.musicSrc+"pictures/"+this.songsList[0].id+"."+this.songsList[0].title+".jpg";
+    //   this.musicPlay('click',0);
+    // },2000)
 
   }
 

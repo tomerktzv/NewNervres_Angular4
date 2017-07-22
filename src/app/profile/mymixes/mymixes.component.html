@@ -50,11 +50,15 @@
               <section (click)="musicPlay($evnet,i)">&nbsp;&nbsp;<span class="indexSong">{{i+1}}&nbsp;&nbsp;&nbsp;</span> <div class="songDetaile"><p>{{ song.title }}</p><p>{{song.artist}}</p></div><span class="durationMix">{{getDurtaion(song.duration)}}</span></section>
               <div class="clear"></div>
             </div>
-
           </div>
           <audio controls #player [ngStyle]="{'display': 'none'}" [attr.src]="src">
             <source src="https://veined-error.000webhostapp.com/songs/100.Gotta%20Get%20Away.mp3" type="audio/mpeg">
           </audio>
+        </div>
+        <div id="father">
+          <div *ngFor="let comment of mix[0].comments" class="mixComments">
+            <article>"{{comment}}"&nbsp;</article>
+          </div>
         </div>
       </div>
     </div>
