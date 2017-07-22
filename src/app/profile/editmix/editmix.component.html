@@ -1,0 +1,21 @@
+<div class="container-fluid myContainer">
+
+  <h1>Lets Mix It Up</h1>
+  <div class="mySongs" *ngFor="let _song of song">
+    <div class="songlist">
+      <img [attr.src]="_song.cover">
+      <article>{{_song.title}}</article>
+      <article>{{_song.artist}}</article>
+      <button type="button" class="btn btn-default removeMix">
+        <span class="glyphicon glyphicon-remove"></span>
+      </button>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="editMix">
+    <h2>Hashtags</h2>
+
+    <h2>Songs</h2>
+  </div>
+
+</div>
