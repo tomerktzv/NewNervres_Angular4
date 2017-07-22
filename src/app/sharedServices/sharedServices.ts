@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
-import {MixesModule} from './mixes';
+import {MixesModule, MixesModuleNew} from './mixes';
 import {UsersModule, UsersModule2} from './users';
 import {SongssModule} from './songs';
 
@@ -44,7 +44,6 @@ export class sharedApiService {
       .map(this.extractData)
       .catch(this.handleError);
   }
-//return this.http.post(this.apiURL,JSON.stringify({genre:_genre}))
   setNewUser(_username,_name,_about,_address,_password,_profilepic): Observable<UsersModule>{
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
@@ -52,6 +51,15 @@ export class sharedApiService {
       .map(this.extractData)
       .catch(this.handleError);
   }
+
+  setNewMix(_username,_mixname,_mixcover): Observable<MixesModuleNew>{
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    return this.http.post(`${this.url}/addNewMix`,({username:_username,mixname:_mixname,mixcover:_mixcover}),options)
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+
   getAllSongs(): Observable<SongssModule[]>{
     return this.http.get(this.url)
       .map(this.extractData)

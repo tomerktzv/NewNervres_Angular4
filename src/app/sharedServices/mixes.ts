@@ -17,3 +17,10 @@ export class MixesModule {
   ){}
 
 }
+export class MixesModuleNew{
+  constructor(
+    public username:string,
+    public mixcover:string,
+    public mixname:string
+  ){}
+}

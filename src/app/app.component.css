@@ -6,7 +6,6 @@ app-header {
   display: block;
   height: 54px;
   width: 100%;
-  /*position: relative;*/
   z-index: 2;
   background: #171717;
   margin-bottom: -18px;
@@ -20,6 +19,7 @@ app-header:after{
   background: inherit;
   z-index: -1;
   left: 0;
+  top:-10%;
   bottom: 0;
   transform-origin: right bottom;
   transform: skewY(-1.7deg);

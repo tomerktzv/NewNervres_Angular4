@@ -1,0 +1,63 @@
+<div class="container">
+
+  <button class="creatMix"></button>
+
+    <div class="jumbotron col-xs-6 col-md-3">
+      <form (ngSubmit) = "onEnterMix(x)" #x="ngForm">
+      <h3>Create A New MIX</h3>
+
+      <div class="input-group">
+        <span class="input-group-addon glyphicon glyphicon-headphones" id="basic-addon1"></span>
+        <input type="text" class="form-control" placeholder="Mix Name" ngModel name="mname" aria-describedby="basic-addon1">
+      </div>
+
+      <p>Select Cover Pictuer:</p>
+
+      <input id="cvr1" type="radio" name="coverPic" ngModel value="coverM1.png">
+      <label for="cvr1"><img src="../../../assets/coverM1.png"></label>
+      <input id="cvr2" type="radio" name="coverPic" ngModel value="coverM2.png">
+      <label for="cvr2"><img src="../../../assets/coverM2.png"></label>
+      <input id="cvr3" type="radio" name="coverPic" ngModel value="coverM3.png">
+      <label for="cvr3"><img src="../../../assets/coverM3.png"></label>
+      <input id="cvr4" type="radio" name="coverPic" ngModel value="coverM4.png">
+      <label for="cvr4"><img src="../../../assets/coverM4.png"></label>
+      <div class="clear"></div>
+      <input class="btn btn-primary btn-lg" role="button" type="submit" value="DONE">
+      </form>
+    </div>
+
+
+
+  <div class="row">
+   <div *ngFor="let mix of mixes">
+      <div class="col-xs-6 col-md-3">
+        <h3>{{mix.mixname}}</h3>
+        <a href="#" class="thumbnail"
+           role="presentation"
+           routerLinkActive="active"
+           routerLink="/view-your-mix/{{mix.username}}/{{mix.mixname}}">
+          <img src="../../../assets/{{mix.mixcover}}" alt="...">
+        </a>
+        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default playMix">
+              <span class="glyphicon glyphicon-play"
+                    role="presentation"
+                    routerLinkActive="active"
+                    routerLink="/view-your-mix/{{mix.username}}/{{mix.mixname}}">
+              </span>
+            </button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default fixMix"><span class="glyphicon glyphicon-pencil"></span></button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default removeMix"><span class="glyphicon glyphicon-remove"></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+

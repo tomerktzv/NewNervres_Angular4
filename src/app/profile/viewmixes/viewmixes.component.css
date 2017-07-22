@@ -1,0 +1,145 @@
+.container{
+  width: 100%;
+  min-height: 1000px;
+  background: url("../../../assets/wallBackground.png") no-repeat;
+  background-size: 100% 400px;
+}
+
+.row{
+  width: 50%;
+  margin: 7% auto;
+  border-radius: 7px;
+}
+.row>div>div{
+  width:30%;
+  background: rgba(0,0,0,0.7);
+  color: #957350;
+  transition: background-color 1s;
+}
+
+.row>div>div h3{
+  text-align: center;
+  font-family: "Comic Sans MS";
+  font-weight: bold;
+}
+
+.row>div>div a:hover{
+  border: none;
+  background-color: rgba(0,0,0,0.7);
+  animation: coverflip 0.5s 1;
+}
+
+@keyframes coverflip {
+  from{
+    transform: skewY(-2.1deg);
+    box-shadow: 0 -10px 20px grey;
+    border-radius: 7%;
+  }
+  top{
+    transform: skewY(0deg);
+    box-shadow: none;
+    border-radius: 5%;
+  }
+}
+
+
+
+.btn-default{
+  background-color: #957350;
+  margin-bottom: 5.5%;
+}
+
+.playMix,.fixMix:hover,.removeMix:hover{
+  transition: background-color 0.5s;
+}
+
+.playMix:hover,.fixMix:hover,.removeMix:hover{
+  color: white;
+}
+.playMix:hover{
+  background-color: #00ff7f;
+}
+.fixMix:hover{
+  background-color: #0084a8;
+}
+
+.removeMix:hover{
+  background-color: #f96545;
+}
+
+
+.creatMix{
+  position: fixed;
+  top:13%;
+  right: 7%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  /*background-color: transparent;*/
+  background: url("../../../assets/plusIcon.png") no-repeat;
+  background-size: 80px;
+  background-position-y: 50%;
+}
+.creatMix>span{
+  width: 90%;
+}
+
+.creatMix:focus + .jumbotron{
+  display: block;
+}
+.jumbotron:hover {
+  display: block;
+}
+
+.jumbotron{
+  position: fixed;
+  top: 15%;
+  right:15%;
+  z-index: 15;
+  display: none;
+}
+
+.jumbotron h3{
+  text-align: center;
+}
+
+#cvr1, #cvr2, #cvr3, #cvr4{
+  display: none;
+}
+
+.jumbotron p{
+  margin-top: 3%;
+}
+
+.jumbotron label{
+  display: block;
+  width: 80px;
+  height: 80px;
+
+  float: left;
+  margin-right: 2.5%;
+  margin-top: 2.5%;
+}
+.jumbotron label img{
+  width:98%;
+  transition: border 0.5s;
+}
+
+.jumbotron label:hover{
+  cursor: pointer;
+}
+
+.jumbotron img:hover{
+  border-radius: 2px;
+  border: 5px solid darkgray;
+}
+
+
+.clear{
+  clear: both;
+}
+
+input[type="submit"]:active + form{
+  display: none;
+}

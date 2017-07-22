@@ -25,6 +25,7 @@ nav {
   display: block;
   background: url('../../assets/logo2.png') no-repeat;
   width: 20%;
+  z-index: 30;
   height: 55px;
 }
 

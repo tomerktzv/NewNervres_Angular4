@@ -32,6 +32,22 @@
   margin-left:-5%;
   margin-right: 7%;
 }
+#mixCover:hover{
+  animation: coolLights 0.5s 1;
+}
+
+@keyframes coolLights {
+  0%{transform: skewY(2deg)}
+  10%{transform: skewY(5deg)}
+  20%{transform: skewY(2deg)}
+  30%{transform: skewY(5deg)}
+  40%{transform: skewY(2deg)}
+  50%{transform: skewY(5deg)}
+  60%{transform: skewY(2deg)}
+  70%{transform: skewY(5deg)}
+  80%{transform: skewY(2deg)}
+  90%{transform: skewY(5deg)}
+}
 
 #details{
   float: left;
