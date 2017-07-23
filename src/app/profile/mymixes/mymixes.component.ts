@@ -65,7 +65,9 @@ export class MymixesComponent implements OnInit {
             console.log(err);
           });
     });
-
+    setTimeout(()=>{
+      this.songPlay[3]=this.musicSrc+"pictures/"+this.songsList[0].id+"."+this.songsList[0].title+".jpg";
+    },2000)
     // setTimeout(()=>{
     //   this.songPlay[3]=this.musicSrc+"pictures/"+this.songsList[0].id+"."+this.songsList[0].title+".jpg";
     //   this.musicPlay('click',0);
@@ -81,12 +83,12 @@ export class MymixesComponent implements OnInit {
 
     let mixDuration:string;
 
-    if(min==10) mixDuration = `10:`;
+    if(min>=10) mixDuration = `${min}:`;
     else mixDuration = `0${min}:`;
 
     if(sec>=10) mixDuration+=`${sec}`;
     else mixDuration+=`0${sec}`;
-    return mixDuration
+    return mixDuration;
   }
 
 

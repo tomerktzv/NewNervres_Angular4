@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
-import {MixesModule, MixesModuleNew, MixesAddHeard} from './mixes';
+import {MixesModule, MixesModuleNew, MixesAddHeard, MixesAddSong, MixesAddHashtag} from './mixes';
 import {UsersModule, UsersModule2} from './users';
 import {SongssModule} from './songs';
 
@@ -61,7 +61,15 @@ export class sharedApiService {
   }
 
   getAllSongs(): Observable<SongssModule[]>{
-    return this.http.get(this.url)
+    return this.http.get(this.url+"/getAllSongs")
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+
+  addSongtoMix(_username,_mixname,_songid): Observable<MixesAddSong>{
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    return this.http.post(`${this.url}/addSongToMix`,({username:_username,mixname:_mixname,songid:_songid}),options)
       .map(this.extractData)
       .catch(this.handleError);
   }
@@ -79,7 +87,13 @@ export class sharedApiService {
       .map(this.extractData)
       .catch(this.handleError);
   }
-
+  addHashTag(_username,_mixname,_hashtag): Observable<MixesAddHashtag>{
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    return this.http.post(`${this.url}/addHashTagToMix`,({username:_username,mixname:_mixname,hashtag:_hashtag}),options)
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
   //abstract function - no need to change
   private extractData(res: Response) {
     let body = res.json();

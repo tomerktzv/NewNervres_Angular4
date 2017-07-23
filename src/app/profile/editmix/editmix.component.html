@@ -1,11 +1,13 @@
-<div class="container-fluid myContainer">
+<div class="container myContainer">
 
   <h1>Lets Mix It Up</h1>
   <div class="mySongs" *ngFor="let _song of song">
     <div class="songlist">
       <img [attr.src]="_song.cover">
-      <article>{{_song.title}}</article>
-      <article>{{_song.artist}}</article>
+      <div class="songDetial">
+        <article>{{_song.title}}</article>
+        <article>{{_song.artist}}</article>
+      </div>
       <button type="button" class="btn btn-default removeMix">
         <span class="glyphicon glyphicon-remove"></span>
       </button>
@@ -14,14 +16,33 @@
   </div>
   <div class="editMix">
     <h2>Hashtags</h2>
+    <form (ngSubmit) = "onHashMix(x)" #x="ngForm" class="formHashtag">
+      <div class="input-group">
+        <span class="input-group-addon glyphicon glyphicon-bullhorn"
+              id="basic-addon1">
+        </span>
+        <input type="text" class="form-control test2"
+               placeholder="#HashTag"
+               ngModel
+               name="hashtag"
+               aria-describedby="basic-addon1">
+      </div>
+      <input class="btn btn-primary btn-lg test" role="button" type="submit">
+    </form>
 
     <h2>Songs</h2>
+    <div *ngFor="let songAdd of song2;let i=index">
+      <div class="songtoadd">
+        <img [attr.src]="songAdd.cover"><h4>{{songAdd.title}} BY {{songAdd.artist}}</h4><button (click)="addSong($event,songAdd.id,songAdd.title,songAdd.artist)">+</button>
+      </div>
+      <div class="clear"></div>
+    </div>
   </div>
 
   <div class="hastgMix" *ngIf="mix">
     <h4>HASHTAGS</h4>
-    <div *ngFor="let comment of mix.comments">
-      <p class="commentHastg">#{{comment}}</p>
+    <div *ngFor="let hash of mix.hashtags">
+      <p class="commentHastg">#{{hash}}</p>
     </div>
   </div>
 </div>

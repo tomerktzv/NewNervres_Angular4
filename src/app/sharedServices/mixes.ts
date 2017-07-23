@@ -31,3 +31,20 @@ export class MixesAddHeard{
     public mixname:string
   ){}
 }
+
+export class MixesAddSong{
+  constructor(
+    public username:string,
+    public mixname:string,
+    public songid:number
+  ){}
+
+}
+
+export class MixesAddHashtag {
+  constructor(
+    public username: string,
+    public mixname: string,
+    public hashtags: [string]
+  ) {}
+}
